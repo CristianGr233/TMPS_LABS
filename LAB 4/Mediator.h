@@ -85,8 +85,6 @@ public:
             mediator->notify(this, "Gun_Aim");
         else
             mediator->notify(this, "Gun_Lower");
-
-
     }
     void setAmmo(int a)
     {
@@ -222,13 +220,9 @@ void MediatorDemo()
 
 
     GunMediator mediator(&gun, &sfx, &vfx, &anim);
-    sfx.setMediator(&mediator);
-    vfx.setMediator(&mediator);
-    anim.setMediator(&mediator);
-    gun.setMediator(&mediator);
     gun.setAmmo(2);
 
-    gun.toggleAim();
+    mediator.toggleAimGun();
     cout<<endl;
     mediator.fireGun();
     cout<<endl;
@@ -236,9 +230,9 @@ void MediatorDemo()
     cout<<endl;
     mediator.fireGun();
     cout<<endl;
-    gun.reload();
+    mediator.reloadGun();
     cout<<endl;
-    gun.toggleAim();
+    mediator.toggleAimGun();
 }
 
 

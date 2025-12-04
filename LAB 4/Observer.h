@@ -182,7 +182,6 @@ void ObserverDemo()
         gunSubject.notifyReload();
     }
 
-
 }
 
 
