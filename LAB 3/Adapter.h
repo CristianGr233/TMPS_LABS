@@ -4,8 +4,6 @@
 #define LAB_3_ADAPTER_H
 
 
-//! Use Facade type of input
-
 
 class InputManager {
     vector<pair<string, void (InputManager::*)()>> inputs;
@@ -28,7 +26,7 @@ public:
 
     void takeInput(string input_key)
     {
-        cout<<"\n\nReceived Input (Keyboard): "<<input_key<<endl;
+        cout<<"\n\nReceived Input (Keyboard/Mouse): "<<input_key<<endl;
         for(auto input : inputs)
         {
             if(input.first == input_key)

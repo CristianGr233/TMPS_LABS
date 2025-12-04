@@ -26,8 +26,6 @@ public:
     {
         return weight;
     }
-
-
 };
 
 
@@ -43,6 +41,7 @@ public:
     }
     void printContents() override
     {
+        cout<<name<<" Contents :"<<endl;
         for(auto node : nodes)
             node->printContents();
     }
@@ -71,7 +70,7 @@ void CompositeDemo()
 
     Container* backpack = new Container("Backpack");
     Container* vest = new Container("Vest");
-    Container* uniform = new Container("Backpack");
+    Container* uniform = new Container("Uniform");
     RegularItem* rifle = new RegularItem("M16", 4);
     RegularItem* medkit = new RegularItem("Medkit", 1);
     RegularItem* mag_1 = new RegularItem("M16_mag", 0.6);
@@ -89,8 +88,9 @@ void CompositeDemo()
     inventory.add(vest);
     inventory.add(backpack);
 
+
     inventory.printContents();
-    cout<<"Weight: "<<inventory.getWeight()<<" kg";
+    cout<<"Total Weight: "<<inventory.getWeight()<<" kg";
 
 
 }
